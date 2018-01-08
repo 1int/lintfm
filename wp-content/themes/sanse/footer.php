@@ -22,11 +22,14 @@
 			<?php
 				get_template_part( 'menus/menu', 'social' ); // Loads the menus/menu-social.php template.
 			?>
-			
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sanse' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'sanse' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'sanse' ), 'Sanse', '<a href="https://foxland.fi/" rel="designer">Sami Keijonen</a>' ); ?>
-		
+
+            <!--&copy;lint.fm, 2018 <span class="sep"> | </span> Вы можете <a href="#">написать мне</a> или <a href="#">подарить чашечку кофе</a>-->
+
+            <p class="footer-text">Если вам что-то понравилось, вы можете <a href="#">подписаться на обновления</a>, <a href="#">написать мне письмо</a> или <a href="#">поддержать небольшой суммой</a>.</p>
+            <p class="footer-text">Если вам что-то не понравилось, вымещайте  агрессию на жене и домашних животных.</p>
+            <p class="footer-copyright">&copy;lint.fm, 2018</p>
+
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
