@@ -73,6 +73,8 @@ function sanse_setup() {
 	 */
 	add_editor_style( array( 'assets/css/editor-style.css' ) );
 
+    wp_enqueue_script('popper', '/wp-content/themes/sanse/assets/js/popper.min.js');
+
 }
 add_action( 'after_setup_theme', 'sanse_setup' );
 
