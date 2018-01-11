@@ -3303,6 +3303,7 @@ function human_time_diff( $from, $to = '' ) {
  * @return string The excerpt.
  */
 function wp_trim_excerpt( $text = '' ) {
+    //return 'qweqwe';
 	$raw_excerpt = $text;
 	if ( '' == $text ) {
 		$text = get_the_content('');
@@ -3330,6 +3331,9 @@ function wp_trim_excerpt( $text = '' ) {
 		 */
 		$excerpt_more = apply_filters( 'excerpt_more', ' ' . '[&hellip;]' );
 		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+        if( strpos($text,$excerpt_more) == false ) {
+            $text .= $excerpt_more;
+        }
 	}
 	/**
 	 * Filters the trimmed excerpt string.
@@ -3339,6 +3343,7 @@ function wp_trim_excerpt( $text = '' ) {
 	 * @param string $text        The trimmed text.
 	 * @param string $raw_excerpt The text prior to trimming.
 	 */
+
 	return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt );
 }
 

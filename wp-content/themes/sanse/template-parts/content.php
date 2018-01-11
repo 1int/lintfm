@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php if ( is_singular() ) : // If single. ?>
-	
+
 		<header class="entry-header">
 			<?php
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -34,29 +34,29 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
-		
+
 		<?php get_template_part( 'entry', 'footer' ); // Loads the entry-footer.php file. ?>
-	
+
 	<?php else : ?>
-		
+
 		<div class="entry-inner">
-		
+
 			<header class="entry-header">
 				<?php
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				?>
 			</header><!-- .entry-header -->
-		
+
 			<div class="entry-summary">
 				<?php the_excerpt(); ?>
 			</div><!-- .entry-summary -->
-			
+
 			<?php
 				get_template_part( 'entry-meta' );
 			?>
-			
+
 		</div><!-- .entry-inner -->
 
 	<?php endif; // End check single. ?>
-	
+
 </article><!-- #post-## -->

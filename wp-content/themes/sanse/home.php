@@ -38,7 +38,7 @@ get_header(); ?>
 			echo '</div><!-- .grid-wrapper -->';
 
 			// Previous/next page navigation. Function is located in inc/template-tags.php.
-			sanse_posts_pagination();
+            sanse_posts_pagination();
 
 		else :
 

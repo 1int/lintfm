@@ -793,6 +793,7 @@ function wp_filter_oembed_result( $result, $data, $url ) {
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
 function wp_embed_excerpt_more( $more_string ) {
+
 	if ( ! is_embed() ) {
 		return $more_string;
 	}
@@ -802,6 +803,7 @@ function wp_embed_excerpt_more( $more_string ) {
 		/* translators: %s: Name of current post */
 		sprintf( __( 'Continue reading %s' ), '<span class="screen-reader-text">' . get_the_title() . '</span>' )
 	);
+
 	return ' &hellip; ' . $link;
 }
 

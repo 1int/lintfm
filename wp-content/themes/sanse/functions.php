@@ -254,15 +254,19 @@ add_action( 'wp_footer', 'sanse_include_svg_icons', 9999 );
  * @return string $more
  */
 function sanse_excerpt_more() {
-
 	/* Translators: The %s is the post title shown to screen readers. */
-	$text = sprintf( esc_html__( 'Read more %s', 'sanse' ), '<span class="screen-reader-text">' . esc_html( get_the_title() ) .  '</span>' );
+/*    global $wp_filter;
+    var_dump($wp_filter);
+    die;
+    end( $wp_filter[ current_filter() ] );*/
+    $text = sprintf( esc_html__( 'Read more %s', 'sanse' ), '<span class="screen-reader-text">' . esc_html( get_the_title() ) .  '</span>' );
 	$more = sprintf( '&hellip; <a href="%s" class="more-link">%s %s</a>', esc_url( get_permalink() ), $text, sanse_get_svg( array( 'icon' => 'next' ) ) );
 
 	return $more;
-
 }
-add_filter( 'excerpt_more', 'sanse_excerpt_more' );
+remove_all_filters('excerpt_more');
+add_filter( 'excerpt_more', 'sanse_excerpt_more');
+
 
 /**
  * Display SVG icons in social navigation.
