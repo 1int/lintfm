@@ -168,7 +168,7 @@ function flamingo_contact_name_meta_box( $post ) {
 }
 
 function flamingo_inbound_fields_meta_box( $post ) {
-?>
+    ?>
 <table class="widefat message-fields striped">
 <tbody>
 

@@ -392,3 +392,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+function filter_wpcf7_skip_mail( $skip_mail, $contact_form ) {
+   return true;
+};
+
+// add the filter
+add_filter( 'wpcf7_skip_mail', 'filter_wpcf7_skip_mail', 10, 2 );

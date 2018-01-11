@@ -25,7 +25,7 @@
 
             <!--&copy;lint.fm, 2018 <span class="sep"> | </span> Вы можете <a href="#">написать мне</a> или <a href="#">подарить чашечку кофе</a>-->
 
-            <p class="footer-text">Если вам что-то понравилось, вы можете <a href="javacript: void(0)" id="donate">поддержать меня небольшой суммой</a>, <a href="/feedback/" target="_blank">написать мне письмо</a> или <a href="<?php bloginfo('rss_url')?>" target="_blank">подписаться на RSS</a>.</p>
+            <p class="footer-text">Если вам что-то понравилось, вы можете <a href="javascript: void(0)" id="donate">поддержать меня небольшой суммой</a>, <a href="/feedback/" target="_blank">написать мне письмо</a> или <a href="<?php bloginfo('rss_url')?>" target="_blank">подписаться на RSS</a>.</p>
             <p class="footer-text">Если вам что-то не понравилось, вымещайте  агрессию на жене и домашних животных.</p>
             <p class="footer-copyright">&copy;lint.fm, 2018</p>
 
