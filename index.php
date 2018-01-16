@@ -11,6 +11,8 @@
  *
  * @var bool
  */
+
+date_default_timezone_set('Europe/Moscow');
 define('WP_USE_THEMES', true);
 define('SCRIPT_DEBUG', true);
 

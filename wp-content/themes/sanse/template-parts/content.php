@@ -15,7 +15,7 @@
 
 		<header class="entry-header">
 			<?php
-				the_title( '<h1 class="entry-title">', '</h1>' );
+				//the_title( '<h1 class="entry-title">', '</h1>' );
 				get_template_part( 'entry', 'meta' ); // Loads the entry-meta.php file.
 			?>
 		</header><!-- .entry-header -->
@@ -43,7 +43,7 @@
 
 			<header class="entry-header">
 				<?php
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					//the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				?>
 			</header><!-- .entry-header -->
 
