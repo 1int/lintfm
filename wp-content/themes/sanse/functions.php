@@ -264,8 +264,25 @@ function sanse_excerpt_more() {
 
 	return $more;
 }
+
+function sanse_excerpt($excerpt) {
+    $content = get_the_content(null, true);
+    $str = '<a href="' . get_site_url() . '/' . get_the_ID();
+    if(($pos = stripos($content, $str)) || ($pos = stripos($content, '<a class="more-link"'))) {;
+        $ret = substr($content, 0, $pos-1);
+        $text = sprintf( esc_html__( 'Read more %s', 'sanse' ), '<span class="screen-reader-text">' . esc_html( get_the_title() ) .  '</span>' );
+        $more = sprintf( '&hellip; <a href="%s" class="more-link">%s %s</a>', esc_url( get_permalink() ), $text, sanse_get_svg( array( 'icon' => 'next' ) ) );
+        return $ret . $more;
+
+    }
+    else {
+        return $excerpt;
+    }
+}
+
 remove_all_filters('excerpt_more');
 add_filter( 'excerpt_more', 'sanse_excerpt_more');
+add_filter('the_excerpt', 'sanse_excerpt', 10, 1);
 
 
 /**
