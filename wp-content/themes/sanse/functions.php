@@ -73,7 +73,7 @@ function sanse_setup() {
 	 */
 	add_editor_style( array( 'assets/css/editor-style.css' ) );
 
-    wp_enqueue_script('popper', '/wp-content/themes/sanse/assets/js/popper.min.js');
+    wp_enqueue_script('popper', 'https://unpkg.com/popper.js@1.12.9/dist/umd/popper.min.js');
 
 }
 add_action( 'after_setup_theme', 'sanse_setup' );
@@ -272,8 +272,7 @@ function sanse_excerpt($excerpt) {
         $ret = substr($content, 0, $pos-1);
         $text = sprintf( esc_html__( 'Read more %s', 'sanse' ), '<span class="screen-reader-text">' . esc_html( get_the_title() ) .  '</span>' );
         $more = sprintf( '&hellip; <a href="%s" class="more-link">%s %s</a>', esc_url( get_permalink() ), $text, sanse_get_svg( array( 'icon' => 'next' ) ) );
-        return $ret . $more;
-
+        return '<p>' . $ret . $more . '</p>';
     }
     else {
         return $excerpt;
