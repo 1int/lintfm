@@ -1,10 +1,10 @@
-=== OneSignal - Free Web Push Notifications ===
+=== OneSignal - Web Push Notifications ===
 Contributors: OneSignal
 Donate link: https://onesignal.com
 Tags: chrome, firefox, safari, push, push notifications, push notification, chrome push, safari push, firefox push, notification, notifications, web push, notify, mavericks, android, android push, android notifications, android notification, mobile notification, mobile notifications, mobile, desktop notification, roost, goroost, desktop notifications, gcm, push messages, onesignal
 Requires at least: 3.8
-Tested up to: 4.9.1
-Stable tag: 1.16.4
+Tested up to: 5.2.1
+Stable tag: 1.17.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,15 +12,19 @@ Increase engagement and drive more repeat traffic to your WordPress site with de
 
 == Description ==
 
-[OneSignal](https://onesignal.com) is a complete push notification solution for WordPress blogs and websites, trusted by over 301,500 developers and marketers including some of the largest brands and websites in the world. We send over a billion notifications a day.
+[OneSignal](https://onesignal.com) is an easy way to increase user engagement. Use OneSignal to send visitors targeted push notifications so they keep coming back. It takes just a few minutes to install.
 
-After setup, your visitors can opt-in to receive desktop push notifications when you publish a new post, and visitors receive these notifications even after they’ve left your website.
+After setup, your visitors opt-in to receive push notifications when you publish a new post. Visitors receive these notifications even after they’ve left your website, thus driving re-engagement. 
 
-We make it easy to configure delivering notifications at preset intervals, targeting notifications to specific users, and customizing the opt-in process for your visitors.
+You can configure notification delivery at preset intervals, create user segments, and customize the opt-in process for visitors.
 
-Features:
+OneSignal is free for up to 30,000 subscribers; there are no limits on the number of push notifications you can send. Contact [support@onesignal.com](mailto:support@onesignal.com) if you have any questions. We’d love to hear from you.
 
-* **Supports Chrome** (Desktop & Android), **Safari** (Mac OS X), and **Firefox** (Desktop) on both HTTP and HTTPS sites.
+= Company =
+OneSignal is trusted by over 650,000 developers and marketing strategists. We power push notifications for everyone from early stage startups to Fortune 500 Companies, sending 4 billion notifications per day. It is the most popular push notification plugin on Wordpress with 90,000+ installations.
+
+= Features =
+* **Supports Chrome** (Desktop & Android), **Safari** (Mac OS X), **Microsoft Edge** (Desktop & Android), **Opera** (Desktop & Android) and **Firefox** (Desktop & Android) on both HTTP and HTTPS sites.
 
 * **Automatic Notifications** - Send notifications to followers every time you publish a new post. Or set up a reminder that gets automatically sent to them if they haven’t visited for a few days.
 
@@ -34,8 +38,6 @@ Features:
 
 * **Scheduled Notifications** - Schedule notifications to be delivered in the future, based on a user’s time zone, or even based on the same time of day they last visited your website.
 
-**All completely free. No fees or limitations.**
-
 == Installation ==
 
 1. Install OneSignal from the WordPress.org plugin directory or by uploading the OneSignal plugin folder to your wp-content/plugins directory.
@@ -46,15 +48,97 @@ Features:
 
 1. Notifications on Chrome, Safari, and Firefox.
 2. Our detailed setup instructions to get you started.
-3. Another shot of our detailed setup instructions with images.
-4. Our configuration settings allowing you to customize the way users are prompted to subscribe and the notifications they receive.
-5. Our OneSignal dashboard users page, where you can see your subscribed users.
-6. Our OneSignal dashboard sent notifications page, where you can see the status of your sent notifications.
-7. Our OneSignal dashboard notification creation page, with an emoji selector and multi-language support.
-8. Our OneSignal dashboard sent notifications detail page, showing a notification being sent with live click tracking.
-9. Our OneSignal dashboard A/B testing page.
+3. Our configuration main configuration setup page.
+4. Our OneSignal dashboard users page, where you can see your subscribed users.
+5. Our OneSignal dashboard sent notifications page, where you can see the status of your sent notifications.
+6. Our OneSignal dashboard notification creation page, with show some of the browser settings available.
+7. Our OneSignal Wordpress welcome notification options.
+8. Our OneSignal Wordpress setting for prompting options.
+
+== Frequently Asked Questions ==
+
+= HTTP Site Setup Video =
+[youtube https://www.youtube.com/watch?v=j8qO9gDr9Wg]
+
+= HTTPS Site Setup Video =
+HTTPS Setup Video: [youtube https://www.youtube.com/watch?v=BeTZ2KgytC0]
 
 == Changelog ==
+
+= 1.17.5 [
+
+- Updated notice message to reflect changes to time limiter, removed extra newline from description
+
+= 1.17.4 = 
+
+- Changed time limiter to 2 minutes from 1 hour to ease restrictions on sending update notifications
+
+= 1.17.3 =
+
+- Added debug to logging to responses with non 200-level status codes
+- Made notices unique
+- Bug fixes
+
+= 1.17.2 =
+
+- Lengthened timeout, debugging tool, status-code bug fixes
+
+= 1.17.1 =
+
+- Support for more detailed error messages
+
+= 1.17.0 =
+
+- Bug fixes, edge-case handling, refactoring
+
+= 1.16.16 = 
+
+- Code to catch error where core/editor is not defined for old versions of the editor
+
+= 1.16.15 =
+
+- WP5 notice support and error handling for errors arising from v 1.16.14
+
+= 1.16.14 =
+
+- Replaced cURL calls with HTTP API
+
+= 1.16.13 =
+
+- Added timestamp to allow re-pushing notifications upon editing an existing post after 1 hr
+
+= 1.16.12 =
+
+- Reverted unchecking send notifcation on post publish
+
+= 1.16.11 =
+
+- On Wordpress 5.0 "Send notification on post publish" now unchecks after posting.
+- Added extra checks to ensure double notifications are not sent for the same post.
+
+= 1.16.10 =
+
+Updated plugin description and added FAQ section.
+
+= 1.16.9 =
+
+Reverting the UI changes for HTTP switch.
+
+= 1.16.8 =
+
+This release makes HTTP switch match the dashboard (renamed to "My site is not fully HTTPS") and removes deprecation warnings for php 7.2.
+
+= 1.16.7 =
+
+This release updates the service worker to use a 50% smaller service worker-only file.
+
+= 1.16.6 =
+
+This release the issue where even after saving the form, the error about not completing the required fields would appear because the settings for the new page view were loaded before the previous page's settings were saved. Also a broken doc link was fixed.
+
+= 1.16.5 =
+
+This release changes the notification send rate limit from at most one every 10 seconds to at most one every 1 second.
 
 = 1.16.4 =
 
