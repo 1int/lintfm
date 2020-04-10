@@ -420,3 +420,36 @@ function filter_wpcf7_skip_mail( $skip_mail, $contact_form ) {
 
 // add the filter
 add_filter( 'wpcf7_skip_mail', 'filter_wpcf7_skip_mail', 10, 2 );
+
+
+//Antispam taken from here: http://reset.name/wordpress-ru/wordpress-zashhita-ot-spama-bez-plaginov-i-kapchi/
+add_filter( 'comment_form_default_fields', 'add_antispam_field_to_comment_form' );
+add_filter( 'comment_form_fields', 'add_antispam_field_to_comment_form' );
+function add_antispam_field_to_comment_form($fields) {
+	remove_form_novalidate();
+
+	$fields['csrf'] = '
+	<input type="hidden" name="csrf" required>
+	<script>document.getElementsByName("csrf")[0].value="'.time().'"</script> 
+	';
+
+	return $fields;
+}
+
+add_action( 'pre_comment_on_post', 'action_check_hidden_field' );
+function action_check_hidden_field( $comment_post_ID ){
+
+	if( is_user_logged_in() ) {
+		return;
+	}
+
+	// Can't post comments faster than X seconds after opening the post
+	$human_pause = 11;
+	if (!isset($_POST['csrf']) || ((time() - intval($_POST['csrf'])) < $human_pause) || !preg_match('/\d{10}/',$_POST['csrf'])) {
+		wp_die('I think you are a robot','Service Unavailable', 503);
+	}
+}
+
+function remove_form_novalidate() {
+	remove_theme_support( 'html5' );
+}
